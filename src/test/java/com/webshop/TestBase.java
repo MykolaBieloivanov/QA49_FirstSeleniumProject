@@ -1,17 +1,14 @@
 package com.webshop;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
-public class TestBase  {
+public class TestBase {
     WebDriver driver;
 
     @BeforeMethod
@@ -28,10 +25,6 @@ public class TestBase  {
     }
 
 
-    public boolean isHomeComponentPresent() {
-        return driver.findElements(By.cssSelector("div:nth-child(3)>div>div>div>div>h2")).size() > 0;
-    }
-
     public boolean isElementPresent(By locator) {
         return driver.findElements(locator).size() > 0;
     }
@@ -47,5 +40,28 @@ public class TestBase  {
     }
 
 
+    public void clickOnRegisterButton() {
+        click(By.name("register-button"));
+    }
+
+    public void fillRegisterLoginForm(Customer customer) {
+        type(By.name("FirstName"), customer.getFirstName());
+
+        type(By.name("LastName"), customer.getLastName());
+
+        type(By.name("Email"), customer.getEmail());
+
+        type(By.name("Password"), customer.getPassword());
+
+        type(By.name("ConfirmPassword"), customer.getRepeatPassword());
+    }
+
+    public void clickOnRegisterLink() {
+        click(By.cssSelector("[href='/register']"));
+    }
+
+    public boolean isElementExist() {
+        return isElementPresent(By.xpath("//h1"));
+    }
 }
 
