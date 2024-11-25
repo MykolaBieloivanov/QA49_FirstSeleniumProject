@@ -1,0 +1,5 @@
+20:29:13.701 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\beloi\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+20:29:15.653 [main] INFO  com.webshop.TestBase -- Start test
+20:29:17.111 [main] INFO  com.webshop.TestBase -- Stop test

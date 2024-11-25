@@ -1,5 +1,6 @@
 package com.webshop;
 
+import models.Customer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

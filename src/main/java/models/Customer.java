@@ -1,4 +1,4 @@
-package com.webshop;
+package models;
 
 public class Customer{
     private String firstName;
